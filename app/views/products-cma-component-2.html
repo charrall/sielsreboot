@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/products-cma-4">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-xl">What type of component is it?</h1>
+
+            <form class="form" action="/products-cma-2" method="post">
+
+              {% from "govuk/components/radios/macro.njk" import govukRadios %}
+              {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+
+              {% set speHtml %}
+              {{ govukTextarea({
+                name: "explain-sn",
+                id: "explain-sn",
+                label: {
+                  text: "Provide details of the specific hardware"
+                }
+              }) }}
+              {% endset -%}
+
+              {% set modHtml %}
+              {{ govukTextarea({
+                name: "explain-sn",
+                id: "explain-sn",
+                label: {
+                  text: "Provide details of the modifications and the specific hardware"
+                }
+              }) }}
+              {% endset -%}
+
+              {% set genHtml %}
+              {{ govukTextarea({
+                name: "explain-sn",
+                id: "explain-sn",
+                label: {
+                  text: "Provide details of the intended general-purpose use"
+                }
+              }) }}
+              {% endset -%}
+
+
+
+                          {{ govukRadios({
+                idPrefix: "sn",
+      name: "sn",
+      fieldset: {
+        legend: {
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+
+              items: [
+                  {
+                    value: "Yes-specially",
+                    text: "Specially designed for hardware",
+                    conditional: {
+              html: speHtml
+            }
+                  },
+
+                  {
+                    value: "modified",
+                    text: "Modified for hardware",
+                    conditional: {
+              html: modHtml
+            }
+                  },
+
+                  {
+                    value: "general-purpose",
+                    text: "General-purpose component",
+                    conditional: {
+              html: genHtml
+            }
+                                  }
+                ]
+              }) }}
+
+
+              <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+            </form>
+
+          </div>
+        </div>
+
+      {% endblock %}
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:m975189f4ba442ecbf67d4147307b177 msdt:dt="string">Digital Trade|60c33e7d-2e0c-4186-8299-b0ee84e7945c</mso:m975189f4ba442ecbf67d4147307b177>
+<mso:TaxCatchAll msdt:dt="string">1;#Digital Trade</mso:TaxCatchAll>
+<mso:_dlc_DocId msdt:dt="string">WPHUKVZC74T5-2083009092-704119</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">9077284e-c40d-452d-8c39-35e7fec0855b</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://dbis.sharepoint.com/sites/DIT259/_layouts/15/DocIdRedir.aspx?ID=WPHUKVZC74T5-2083009092-704119, WPHUKVZC74T5-2083009092-704119</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>

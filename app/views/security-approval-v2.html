@@ -1,0 +1,123 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/journey-5">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">If you are exporting security classified products, you may need a Ministry of Defence (MOD) approval</h1>
+
+      <p>Do you have an MOD security approval, such as F680 or F1686?</p>
+
+      <form class="form" action="/security-approval-v2-answer" method="post">
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+        {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+
+        {% set yesHtml %}
+        {{ govukCheckboxes({
+          idPrefix: "security-approval",
+      name: "security-approval",
+      fieldset: {
+      legend: {
+        text: "What type of approval do you have?",
+        isPageHeading: true
+      }
+    },
+
+        items: [
+            {
+              value: "f680",
+              text: "F680"
+            },
+            {
+              value: "f1686",
+              text: "F1686"
+            },
+            {
+              value: "other",
+              text: "Other written approval"
+            }
+          ]
+        }) }}
+
+{% endset -%}
+
+
+              {{ govukRadios({
+          idPrefix: "security-grading",
+name: "security-grading",
+fieldset: {
+  legend: {
+    isPageHeading: true,
+    classes: "govuk-fieldset__legend--l"
+  }
+},
+
+        items: [
+        {
+            value: "No",
+            text: "No"
+          },
+            {
+              value: "yes",
+              text: "Yes",
+              conditional: {
+                html: yesHtml
+              }
+            }
+
+          ]
+        }) }}
+
+        <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+        Help with security approvals
+        </span>
+        </summary>
+        <div class="govuk-details__text">
+
+          <p>Some security classified products need an approval before they can be exported.</p>
+
+          <p>The F680 is an approval to export security classified products to overseas organisations or individuals, when they do not directly contribute towards a UK government defence contract.<p/>
+          <p><a href="https://www.gov.uk/government/publications/ministry-of-defence-form-680-procedure-guidance"> F680 guidance (opens in new tab)</a></p>
+
+          <p>The F1686 is an approval to sub-contract or collaborate with overseas organisations or individuals on MOD projects that involve classified information.
+          <p><a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1095602/ISN_2022-08_Subcontracting_or_Collaborating_on_Classified_MOD_Programmes.pdf"> F1686 guidance (opens in new tab)</a></p>
+
+          <p>MOD may also issue other written approvals to delegate authority to named 'security controllers' within your organisation, or approval may be provided through a Project Security Instruction (PSI) agreed by collaborating overseas governments.</p>
+
+        </div>
+        </details>
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:m975189f4ba442ecbf67d4147307b177 msdt:dt="string">Digital Trade|60c33e7d-2e0c-4186-8299-b0ee84e7945c</mso:m975189f4ba442ecbf67d4147307b177>
+<mso:TaxCatchAll msdt:dt="string">1;#Digital Trade</mso:TaxCatchAll>
+<mso:_dlc_DocId msdt:dt="string">WPHUKVZC74T5-2083009092-704288</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">05da3496-7046-42c4-b39a-766ea20cfd49</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://dbis.sharepoint.com/sites/DIT259/_layouts/15/DocIdRedir.aspx?ID=WPHUKVZC74T5-2083009092-704288, WPHUKVZC74T5-2083009092-704288</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>

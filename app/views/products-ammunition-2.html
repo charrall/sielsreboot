@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/products-ammunition-1-partno">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Do you know the product's control list entry?</h1>
+
+      <form class="form" action="/products-ammunition-3" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {% set yesHtml %}
+{{ govukInput({
+  id: "cle-yes",
+  name: "cle-yes",
+  type: "cle",
+  autocomplete: "cle",
+  spellcheck: false,
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Enter the control list entry (type to get suggestions)"
+  }
+}) }}
+{% endset -%}
+
+{% set noHtml %}
+<div>
+<p>The product will be assessed and given a control list entry. If the product is not subject to any controls, you'll be issued with a 'no licence required' document.</p>
+</div>
+{% endset -%}
+
+
+
+
+
+        {{ govukRadios({
+          idPrefix: "cle",
+name: "cle",
+fieldset: {
+  legend: {
+    isPageHeading: true,
+    classes: "govuk-fieldset__legend--l"
+  }
+},
+        items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              conditional: {
+        html: yesHtml
+      }
+            },
+            {
+              value: "No",
+              text: "No",
+              conditional: {
+        html: noHtml
+      }
+          }
+          ]
+        }) }}
+
+        <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Help with control list entries
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p>Control lists determine whether a product is controlled and requires a licence to export.</p>
+    <p><a href="https://www.gov.uk/guidance/uk-strategic-export-control-lists-the-consolidated-list-of-strategic-military-and-dual-use-items">Guidance on control lists (opens in new tab)</a></p>
+  </div>
+</details>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:m975189f4ba442ecbf67d4147307b177 msdt:dt="string">Digital Trade|60c33e7d-2e0c-4186-8299-b0ee84e7945c</mso:m975189f4ba442ecbf67d4147307b177>
+<mso:TaxCatchAll msdt:dt="string">1;#Digital Trade</mso:TaxCatchAll>
+<mso:_dlc_DocId msdt:dt="string">WPHUKVZC74T5-2083009092-704088</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">ff2e8b85-6d0d-4b63-9019-fed194bc543c</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://dbis.sharepoint.com/sites/DIT259/_layouts/15/DocIdRedir.aspx?ID=WPHUKVZC74T5-2083009092-704088, WPHUKVZC74T5-2083009092-704088</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>

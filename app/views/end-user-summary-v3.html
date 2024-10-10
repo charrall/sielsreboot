@@ -1,0 +1,134 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/end-user-7">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+      <h1 class="govuk-heading-xl">End-user summary</h1>
+
+      <form class="form" action="/task-list" method="post">
+
+
+
+        <dl class="govuk-summary-list">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key ">
+              Select the type of end-user
+            </dt>
+            <dd id="type" class="govuk-summary-list__value">
+              Your answer here
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link govuk-link--no-visited-state" href="/none">Change</a>
+    </dd>
+          </div>
+
+  			<div class="govuk-summary-list__row">
+  				<dt class="govuk-summary-list__key ">
+  					End-user name
+  				</dt>
+  				<dd id="name" class="govuk-summary-list__value">
+  					Your answer here
+  				</dd>
+          <dd class="govuk-summary-list__actions">
+              <a class="govuk-link govuk-link--no-visited-state" href="/none">Change</a>
+  </dd>
+  			</div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key ">
+            End-user website (optional)
+          </dt>
+          <dd id="website" class="govuk-summary-list__value">
+            <a class="govuk-link govuk-link--no-visited-state" href="/none">www.youranswerhere.co.uk</a>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+              <a class="govuk-link govuk-link--no-visited-state" href="/none">Change</a>
+      </dd>
+        </div>
+
+  			<div class="govuk-summary-list__row">
+  				<dt class="govuk-summary-list__key ">
+  					End-user address
+  				</dt>
+  				<dd id="address" class="govuk-summary-list__value">
+  					Your answer here
+  				</dd>
+          <dd class="govuk-summary-list__actions">
+              <a class="govuk-link govuk-link--no-visited-state" href="/none">Change</a>
+  </dd>
+  			</div>
+
+
+
+  			<div class="govuk-summary-list__row">
+  				<dt class="govuk-summary-list__key ">
+  					Signatory name
+  				</dt>
+  				<dd id="signatory_name" class="govuk-summary-list__value">
+  					Your answer here
+  				</dd>
+          <dd class="govuk-summary-list__actions">
+              <a class="govuk-link govuk-link--no-visited-state" href="/none">Change</a>
+  </dd>
+  			</div>
+
+  			<div class="govuk-summary-list__row">
+  				<dt class="govuk-summary-list__key ">
+  					Do you have an end-user document?
+  				</dt>
+          <dd id="signatory_name" class="govuk-summary-list__value">
+  				No, I do not have an end-user undertaking or stockist undertaking
+  				</dd>
+          <dd class="govuk-summary-list__actions">
+              <a class="govuk-link govuk-link--no-visited-state" href="/none">Change</a>
+  </dd>
+  			</div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key ">
+            Explain why you do not have an end-user undertaking or stockist undertaking
+          </dt>
+          <dd id="signatory_name" class="govuk-summary-list__value">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempus tellus vitae tortor maximus blandit. Sed tellus neque, dictum vitae enim ut, facilisis iaculis ex
+          </dd>
+          <dd class="govuk-summary-list__actions">
+              <a class="govuk-link govuk-link--no-visited-state" href="/none">Change</a>
+  </dd>
+        </div>
+
+        	</dl>
+
+
+        <button class="govuk-button" data-module="govuk-button">Submit</button>
+
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+   Remove end-user
+ </button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:m975189f4ba442ecbf67d4147307b177 msdt:dt="string">Digital Trade|60c33e7d-2e0c-4186-8299-b0ee84e7945c</mso:m975189f4ba442ecbf67d4147307b177>
+<mso:TaxCatchAll msdt:dt="string">1;#Digital Trade</mso:TaxCatchAll>
+<mso:_dlc_DocId msdt:dt="string">WPHUKVZC74T5-2083009092-704016</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">e438316d-3828-499f-980f-b0babd9f0b71</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://dbis.sharepoint.com/sites/DIT259/_layouts/15/DocIdRedir.aspx?ID=WPHUKVZC74T5-2083009092-704016, WPHUKVZC74T5-2083009092-704016</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>

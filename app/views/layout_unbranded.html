@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/unbranded.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+{% block header %}{% endblock %}
+{% block footer %}{% endblock %}
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:m975189f4ba442ecbf67d4147307b177 msdt:dt="string">Digital Trade|60c33e7d-2e0c-4186-8299-b0ee84e7945c</mso:m975189f4ba442ecbf67d4147307b177>
+<mso:TaxCatchAll msdt:dt="string">1;#Digital Trade</mso:TaxCatchAll>
+<mso:_dlc_DocId msdt:dt="string">WPHUKVZC74T5-2083009092-704036</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">90048c9f-85b8-4264-812d-26305e12e2d3</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://dbis.sharepoint.com/sites/DIT259/_layouts/15/DocIdRedir.aspx?ID=WPHUKVZC74T5-2083009092-704036, WPHUKVZC74T5-2083009092-704036</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>

@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/end-user-7-0-government">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Upload an end-user document</h1>
+
+      <p class="govuk-body">Upload an <a href="https://www.gov.uk/government/publications/end-user-undertaking-euu-form"> end-user undertaking (EUU)</a>, <a href="https://www.gov.uk/government/publications/stockist-undertaking-su-form">stockist undertaking (SU)</a> or a purchase invoice.</p>
+
+      <form class="form" action="/end-user-summary-v4" method="post">
+
+        {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+
+      {{ govukFileUpload({
+    id: "file-upload-euu",
+    name: "file-upload-euu"
+    }) }}
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+
+    {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+    {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+    {{ govukTextarea({
+      name: "euu description",
+      id: "euu description",
+      label: {
+      text: "Describe any differences between products listed in the document and products on the application (optional)"
+    }
+    }) }}
+
+    {{ govukRadios({
+    idPrefix: "in-english",
+    name: "in-english",
+    fieldset: {
+    legend: {
+      text: "Is the end-user document in English?"
+    }
+    },
+    items: [
+    {
+      value: "Yes",
+      text: "Yes"
+    },
+    {
+      value: "No",
+      text: "No"
+    }
+    ]
+    }) }}
+
+    {{ govukRadios({
+    idPrefix: "letterhead",
+    name: "letterhead",
+    fieldset: {
+    legend: {
+      text: "Does the document include at least one page on company letterhead?"
+    }
+    },
+    items: [
+    {
+      value: "Yes-letterhead",
+      text: "Yes"
+    },
+    {
+      value: "No-letterhead",
+      text: "No"
+    }
+    ]
+    }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+    </div>
+
+    {% endblock %}
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:m975189f4ba442ecbf67d4147307b177 msdt:dt="string">Digital Trade|60c33e7d-2e0c-4186-8299-b0ee84e7945c</mso:m975189f4ba442ecbf67d4147307b177>
+<mso:TaxCatchAll msdt:dt="string">1;#Digital Trade</mso:TaxCatchAll>
+<mso:_dlc_DocId msdt:dt="string">WPHUKVZC74T5-2083009092-704009</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">d8bbe601-7c8f-4c75-805a-17cd1cd31ec4</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://dbis.sharepoint.com/sites/DIT259/_layouts/15/DocIdRedir.aspx?ID=WPHUKVZC74T5-2083009092-704009, WPHUKVZC74T5-2083009092-704009</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>

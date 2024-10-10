@@ -1,0 +1,164 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/products-component-3">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">What is the security grading or classification?</h1>
+
+      <form class="form" action="/products-component-5" method="post">
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+        {{ govukInput({
+          label: {
+            text: "Enter a prefix (optional)"
+          },
+          hint: {
+    text: "For example, UK, NATO or OCCAR"
+  },
+  classes: "govuk-input--width-10",
+          id: "prefix",
+          name: "prefix"
+        }) }}
+
+
+        {{ govukRadios({
+          idPrefix: "security-grading",
+          name: "security-grading",
+          fieldset: {
+            legend: {
+              text: "Choose the security grading"
+            }
+          },
+          items: [
+            {
+              value: "Unclassified",
+              text: "Unclassified"
+            },
+            {
+              value: "Official",
+              text: "Official"
+            },
+            {
+              value: "Official Sensitive",
+              text: "Official-sensitive"
+            },
+            {
+              value: "Restricted",
+              text: "Restricted"
+            },
+            {
+              value: "Confidential",
+              text: "Confidential"
+            },
+            {
+              value: "Secret",
+              text: "Secret"
+            },
+            {
+              value: "Top Secret",
+              text: "Top Secret"
+            }
+          ]
+        }) }}
+
+{{ govukInput({
+  label: {
+    text: "Enter a suffix (optional)"
+  },
+  hint: {
+text: "For example, UK eyes only"
+},
+classes: "govuk-input--width-20",
+  id: "suffix",
+  name: "suffix"
+}) }}
+
+{{ govukTextarea({
+  label: {
+    text: "Name and address of the issuing authority"
+  },
+  id: "issuing-authority",
+  name: "issuing-authority"
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Reference"
+  },
+  classes: "govuk-input--width-20",
+  id: "reference",
+  name: "reference"
+}) }}
+
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+{{ govukDateInput({
+  id: "issue-date",
+  namePrefix: "issue-date",
+  fieldset: {
+    legend: {
+      text: "Date of issue"
+    }
+  },
+  hint: {
+    text: "For example, 29 09 2021"
+  }
+}) }}
+
+<details class="govuk-details" data-module="govuk-details">
+<summary class="govuk-details__summary">
+<span class="govuk-details__summary-text">
+Help with security gradings
+</span>
+</summary>
+<div class="govuk-details__text">
+<p>The government classifies information assets to ensure they are appropriately protected.</p>
+
+<p><a href="https://www.gov.uk/government/publications/government-security-classifications"> Guidance on government security gradings</a></p>
+
+<p>The grading can sometimes include a prefix and suffix. There are many in use and so it is important that you know the full classification of the product.</p>
+
+<p>If the product was developed with Ministry of Defence (MOD) funding you will find the grading in the Security Aspects Letter provided by the MOD project team.</p>
+
+<p>If the product was developed with overseas government support, that government is responsible for providing the grading.</p>
+
+<p>If the product was developed without UK or overseas government support, you should apply for a private venture grading using <a class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank" href="https://www.spire.trade.gov.uk">SPIRE</a>. The grading will be provided by MOD.</p>
+
+
+</div>
+</details>
+
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:m975189f4ba442ecbf67d4147307b177 msdt:dt="string">Digital Trade|60c33e7d-2e0c-4186-8299-b0ee84e7945c</mso:m975189f4ba442ecbf67d4147307b177>
+<mso:TaxCatchAll msdt:dt="string">1;#Digital Trade</mso:TaxCatchAll>
+<mso:_dlc_DocId msdt:dt="string">WPHUKVZC74T5-2083009092-704142</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">3f660fcb-05d2-41f7-b8f0-c2a327fdc43e</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://dbis.sharepoint.com/sites/DIT259/_layouts/15/DocIdRedir.aspx?ID=WPHUKVZC74T5-2083009092-704142, WPHUKVZC74T5-2083009092-704142</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>

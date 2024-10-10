@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/products-2">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Firearm category</h1>
+
+      <form class="form" action="/products-component-1" method="post">
+
+        <p>Some firearm categories require a criminal conviction check and additonal documentation.</p>
+
+<p>Does the product belong to any of the following categories?</p>
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+        {{ govukCheckboxes({
+          idPrefix: "type-of-component-product",
+          name: "type-of-component-product",
+          fieldset: {
+            legend: {
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "Non-automatic-shotgun-component",
+              text: "Shotgun component (non-automatic)"
+            },
+            {
+              value: "Non-automatic-rim-fired-rifle-component",
+              text: "Rim-fired rifle component (non-automatic)"
+            },
+            {
+              value: "Non-automatic-rim-fired-handgun-component",
+              text: "Rim-fired handgun component (non-automatic)"
+            },
+            {
+              value: "rifle-pre-1938-component",
+              text: "Component for a rifle made before 1938"
+            },
+            {
+              value: "combination-gun-made-before-1938-component",
+              text: "Component for a combination gun made before 1938"
+            },
+            {
+      divider: "or"
+    },
+            {
+                value: "none",
+                text: "None of the above"
+              }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:m975189f4ba442ecbf67d4147307b177 msdt:dt="string">Digital Trade|60c33e7d-2e0c-4186-8299-b0ee84e7945c</mso:m975189f4ba442ecbf67d4147307b177>
+<mso:TaxCatchAll msdt:dt="string">1;#Digital Trade</mso:TaxCatchAll>
+<mso:_dlc_DocId msdt:dt="string">WPHUKVZC74T5-2083009092-704126</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">2338e258-ef08-45d9-b53b-3221eceb27e8</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://dbis.sharepoint.com/sites/DIT259/_layouts/15/DocIdRedir.aspx?ID=WPHUKVZC74T5-2083009092-704126, WPHUKVZC74T5-2083009092-704126</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>

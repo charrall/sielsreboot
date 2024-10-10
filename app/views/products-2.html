@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/products-1-categories-1">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Select the type of firearm product</h1>
+
+      <form class="form" action="/products-2-answer" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "type-of-firearm-product",
+          name: "type-of-firearm-product",
+          fieldset: {
+            legend: {
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "firearm",
+              text: "Firearm"
+            },
+            {
+              value: "ammunition",
+              text: "Ammunition"
+            },
+            {
+              value: "component",
+              text: "Component"
+            },
+            {
+              value: "component-of-firearm-ammunition",
+              text: "Component of ammunition"
+            },
+            {
+              value: "accessory",
+              text: "Accessory"
+            },
+            {
+                value: "software-or-technology-relating-to-a-firearm",
+                text: "Software relating to a firearm"
+              },
+            {
+                value: "software-or-technology-relating-to-a-firearm",
+                text: "Technology relating to a firearm"
+              }
+          ]
+        }) }}
+
+        <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Help with components, accessories and technology
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+        <p>A component is a constituent part or element of the product.</p>
+
+        <p>An accessory is an optional item that when fitted to a functioning product adds features or capability. An accessory can also be removed without detriment to the product.</p>
+
+        <p>'Technology' means information necessary for the development, production or use of goods or software. For example, specifications, engineering drawings and user manuals.</p>
+    </div>
+</details>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/products-component-ammunition-7">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Which section of the Firearms Act 1968 is the product covered by?</h1>
+
+      <form class="form" action="/products-component-ammunition-8-answer" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+{% set dontknowHtml %}
+{{ govukTextarea({
+  id: "dontknow",
+  name: "dontknow",
+  label: {
+    text: "Explain"
+  }
+}) }}
+{% endset -%}
+
+        {{ govukRadios({
+          idPrefix: "section-1-2-or-5",
+name: "section-1-2-or-5",
+fieldset: {
+  legend: {
+    isPageHeading: true,
+    classes: "govuk-fieldset__legend--l"
+  }
+},
+
+        items: [
+            {
+              value: "Section1",
+              text: "Section 1"
+            },
+            {
+              value: "Section2",
+              text: "Section 2"
+          },
+          {
+            value: "Section5",
+            text: "Section 5"
+        },
+        {
+          value: "Not-sure",
+          text: "Don't know",
+          conditional: {
+        html: dontknowHtml
+      }
+      }          ]
+        }) }}
+
+        <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+    More information about the Firearms Act 1968
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+
+    <p> Section 1 is a broad category covering most types of firearm and ammunition, including rifles and high powered air weapons.</p>
+  <p>Section 2 covers most types of shotgun.</p>
+  <p>Section 5 covers weapons and ammunition that are generally prohibited.</p>
+    <p>To read more about Firearms Act 1968 you can visit:</p>
+  <ul>
+    <li><a href="https://www.legislation.gov.uk/ukpga/1968/27/contents">Firearms Act 1968 at Legislation.gov.uk (opens in new tab)</a></li>
+    <li><a href="https://www.gov.uk/guidance/firearms-licensing-police-guidance">Firearms Licensing at GOV.UK (opens in new tab)</a></li>
+    <li><a href="https://www.cps.gov.uk/legal-guidance/firearms">Firearms guidance at Crown Prosecution Service (opens in new tab)</a></li>
+      </ul>
+    </div>
+</details>
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:m975189f4ba442ecbf67d4147307b177 msdt:dt="string">Digital Trade|60c33e7d-2e0c-4186-8299-b0ee84e7945c</mso:m975189f4ba442ecbf67d4147307b177>
+<mso:TaxCatchAll msdt:dt="string">1;#Digital Trade</mso:TaxCatchAll>
+<mso:_dlc_DocId msdt:dt="string">WPHUKVZC74T5-2083009092-704169</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">7eb39a59-b2c2-451a-a6bc-62c8c9c19bfa</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://dbis.sharepoint.com/sites/DIT259/_layouts/15/DocIdRedir.aspx?ID=WPHUKVZC74T5-2083009092-704169, WPHUKVZC74T5-2083009092-704169</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>

@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/application-type-1">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Select the type of export licence you need</h1>
+
+      <p class="govuk-body">Use <a class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank" href="https://www.spire.trade.gov.uk">SPIRE</a> to:<ul class="govuk-list govuk-list--bullet govuk-!-margin-top-2"><li>register for open general export licences</li><li>apply for open individual export licences</li></ul>
+
+      <form class="form" action="/task-list-locked" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+    items: [
+    {
+      value: "SIEL",
+      text: "Standard individual export licence (SIEL)",
+      hint: {
+        text: "Export a set quantity of products to a single destination."
+      }
+    },
+    {
+      value: "OGEL",
+      text: "Open general export licence (OGEL)",
+      hint: {
+        text: "Apply for a pre-published licence to save time and money."
+      },
+      disabled: "true"
+    },
+    {
+      value: "OIEL",
+      text: "Open individual export licence (OIEL)",
+      hint: {
+        text: "Export multiple shipments of specific products and destinations to allow repeat business."
+      },
+          disabled: "true"
+    }
+  ]
+}) }}
+
+        <button class="govuk-button" data-module="govuk-button">Submit</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:m975189f4ba442ecbf67d4147307b177 msdt:dt="string">Digital Trade|60c33e7d-2e0c-4186-8299-b0ee84e7945c</mso:m975189f4ba442ecbf67d4147307b177>
+<mso:TaxCatchAll msdt:dt="string">1;#Digital Trade</mso:TaxCatchAll>
+<mso:_dlc_DocId msdt:dt="string">WPHUKVZC74T5-2083009092-704037</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">036acf73-d6ef-44e5-aa95-932a73ff0ebf</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://dbis.sharepoint.com/sites/DIT259/_layouts/15/DocIdRedir.aspx?ID=WPHUKVZC74T5-2083009092-704037, WPHUKVZC74T5-2083009092-704037</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>

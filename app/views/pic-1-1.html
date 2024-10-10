@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/end-user-9">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Do you have a prior import consent document?</h1>
+
+      <form class="form" action="/pic-1-answer" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+        {% set noHtml %}
+        {{ govukTextarea({
+                name: "pic description",
+                id: "pic description",
+                autocomplete: "pic description",
+                label: {
+              classes: "govuk-label--l"
+        },
+        hint: {
+          text: "Explain why you do not have a prior import consent document (optional)"
+        }
+              }) }}
+        {% endset -%}
+
+
+
+
+        {{ govukRadios({
+          idPrefix: "pic",
+      name: "pic",
+      fieldset: {
+      legend: {
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+      }
+      },
+        items: [
+            {
+              value: "Yes",
+              text: "Yes"
+                        },
+            {
+              value: "No",
+              text: "No",
+              conditional: {
+        html: noHtml
+      }
+          }
+          ]
+        }) }}
+
+
+
+
+        <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Help with prior import consent
+        </span>
+  </summary>
+        <div class="govuk-details__text">
+        <p>Your application may require a <a href="https://www.gov.uk/guidance/firearms-and-export-control-forms">prior import consent (PIC)</a> document to show that the destination country is content to import the firearms.
+        <p>However, if a country does not class a certain product as a firearm, a PIC document may not be issued, and an end-user undertaking would be sufficient instead. It must be submitted together with a letter or email from the relevant importing country's licensing authority stating that a PIC document or equivalent cannot be issued. You can use the 'Additional information' section to upload any supporting documents.</p>
+      </div>
+    </details>
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:m975189f4ba442ecbf67d4147307b177 msdt:dt="string">Digital Trade|60c33e7d-2e0c-4186-8299-b0ee84e7945c</mso:m975189f4ba442ecbf67d4147307b177>
+<mso:TaxCatchAll msdt:dt="string">1;#Digital Trade</mso:TaxCatchAll>
+<mso:_dlc_DocId msdt:dt="string">WPHUKVZC74T5-2083009092-704044</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">39027568-5afb-479e-82a3-ce011407dea6</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://dbis.sharepoint.com/sites/DIT259/_layouts/15/DocIdRedir.aspx?ID=WPHUKVZC74T5-2083009092-704044, WPHUKVZC74T5-2083009092-704044</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
